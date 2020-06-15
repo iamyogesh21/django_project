@@ -1,0 +1,221 @@
+{% extends 'shop/base.html' %} {% block title %} Frolic: Gaming {% endblock %} {% block css %} body .carousel-control-prev-icon, body .carousel-control-next-icon { width: 25px; background-color: rgb(10, 10, 10); height: 50px; } .box-btn { float: right;
+background: transparent; font-size: 23px; color: #a85c32; font-weight: 300; cursor: pointer; border-radius: 5px; border: none; outline: none; display:inline-block } .icon { transition: color .3s linear; } .box-btn .red { color: red;
+    .carousel-inner {
+        height: 80vh;
+    }
+    video{
+        height: 45vh;
+    }
+    
+ {% endblock %}
+{% block body %}
+<!-- Slider start -->
+{% load static%}
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="banner">
+                <img src="{% static 'Img/pubg.jpg' %}" width="100%">
+                <div class="content">
+                    <h2>PUBG MOBILE</h2>
+                    <p>PUBG MOBILE delivers the most intense free-to-play multiplayer action on mobile. Drop in, gear up, and compete. Survive epic 100-player classic battles, payload mode and fast-paced 4v4 team deathmatch and zombie modes. ... Featuring
+                        customizable mobile controls, training modes, and voice chat.
+                    </p>
+                    <a href="#" class="play" onclick="toggle()"><span class="icon-play_circle_outline"></span>Watch
+                        Trailer</a>
+                    <div class="slide">
+                    </div>
+                </div>
+            </div>
+            <div class="trailer" id="onetra">
+                <video src="{% static 'Video/PUBG MOBILE Global Launch Trailer.mp4' %}" controls="true"></video>
+                <span class="close icon-times-circle" onclick="toggle()"></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="banner">
+                <img src="{% static 'Img/apexlegent.jpg' %}" width="100%">
+                <div class="content">
+                    <h2>Apex Legends</h2>
+                    <p>Conquer with character in Apex Legends,Battle Royale shooter where legendary characters with powerful abilities team up to battle for fame. Welcome to the next evolution of Battle Royale.
+                    </p>
+                    <a href="#" class="play" onclick="toggletwo()"><span class="icon-play_circle_outline"></span>Watch
+                        Trailer</a>
+                    <div class="slide">
+                    </div>
+                </div>
+            </div>
+            <div class="trailer" id="twotra">
+                <video src="{% static 'Video/Apex Legends.mp4' %}" controls="true"></video>
+                <span class="close icon-times-circle" onclick="toggletwo()"></span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="banner">
+                <img src="{% static 'Img/Fortnite.jpg' %}" width="100%">
+
+                <div class="content">
+                    <h2>Fortnite</h2>
+                    <p>Fortnite is a survival game where 100 players fight against each other in player versus player combat to be the last one standing. It is a fast-paced, action-packed game, not unlike The Hunger Games, where strategic thinking is a must
+                        in order to survive.
+                    </p>
+                    <a href="#" class="play" onclick="togglethree()"><span class="icon-play_circle_outline"></span>Watch
+                        Trailer</a>
+                    <div class="slide">
+                    </div>
+                </div>
+            </div>
+            <div class="trailer" id="threetra">
+                <video src="{% static 'Video/Fortnite.mp4' %}" controls="true"></video>
+                <span class="close icon-times-circle" onclick="togglethree()"></span>
+            </div>
+        </div>
+    </div>
+</div>
+{% load static%}
+<div class="container my-2">
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+            <li data-target="#multi-item-example" data-slide-to="1"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.0.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.0.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.0.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                            <button id="{{Product.0.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a href="/shop/products/{{Product.0.id}}"> <button id="view{{ Product.0.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.1.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.1.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.1.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.1.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a href="/shop/products/{{Product.1.id}}"> <button id="view{{ Product.1.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.2.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.2.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.2.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.2.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                             <a href="/shop/products/{{Product.2.id}}"> <button id="view{{ Product.2.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.3.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.3.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.3.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.3.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a href="/shop/products/{{Product.3.id}}"> <button id="view{{ Product.3.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.4.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.4.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.4.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.4.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                             <a href="/shop/products/{{Product.4.id}}"> <button id="view{{ Product.4.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.5.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.5.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.5.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.5.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                            <a href="/shop/products/{{Product.5.id}}"> <button id="view{{ Product.5.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.6.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.6.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.6.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.6.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                             <a href="/shop/products/{{Product.6.id}}"> <button id="view{{ Product.6.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="float:left">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src='/media/{{ Product.7.img}}' alt="Person1">
+                        <div class="box-element product mb-2">
+                            <h6><strong>{{Product.7.product_name}}</strong></h6>
+                            <hr>
+                            <h5>&#8377;{{Product.7.price}}
+                                <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                             <button id="pr{{Product.7.product_id}}" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                             <a href="/shop/products/{{Product.7.id}}"> <button id="view{{ Product.7.id }}" class="btn btn-outline-success add-btn update-cart">View</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.Second slide-->
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" href="#multi-item-example" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon fa-3x" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#multi-item-example" role="button" data-slide="next">
+            <span class="carousel-control-next-icon fa-3x" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+    </div>
+    <!--/.Carousel Wrapper-->
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %} {% block title %} Shop {% endblock %} {% block css %} body .carousel-control-prev-icon, body .carousel-control-next-icon { width: 25px; background-color: rgb(10, 10, 10); height: 50px; } .box-btn { float: right; background:
+transparent; font-size: 23px; color: #a85c32; font-weight: 300; cursor: pointer; border-radius: 5px; border: none; outline: none; display:inline-block } .icon { transition: color .3s linear; } .box-btn .red { color: red; {% endblock %} 
+{% block body %}
+{% load static%}
+<div class="container my-3">
+    <div class="row">
+        {% for i in Product %}
+        <div class="col-lg-3 my-2">
+            <img class="thumbnail" src="/media/{{ i.img}}">
+            <div class="box-element product">
+                <h6><strong>{{i.product_name}}</strong></h6>
+                <hr>
+                <h5>&#8377;{{i.price}}
+                 <button type="submit" class="box-btn"><span class="icon icon-heart-o" aria-hidden="true"></span></button></h5>
+                  <span id="divpr{{i.id}}" class="divpr">
+                 <button id="pr{{ i.id }}" data-product={{i.id}} data-action="add"  class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button></span>
+              <a href="/shop/products/{{i.id}}"> <button id="view{{ i.id }}" class="btn btn-outline-success add-btn cart">View</button></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

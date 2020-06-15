@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'CSS/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Font/icomoon/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        {% block css %}
+        
+        {% endblock %}
+    </style>
+</head>
+
+<body>
+{% load static %}
+    <!-- header start -->
+    <div class="py-2 bg-dark">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 d-none d-lg-block">
+                    <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2 "></span> Have a questions?</a>
+                    <a href="mailto:Frolic@helpdesk.com" class="small mr-3"><span class="icon-envelope-o mr-2"></span>Frolic@helpdesk.com</a>
+                    <a href="#" class="small mr-3"><span class="icon-facebook-f"></span></a>
+                    <a href="#" class="small mr-3"><span class="icon-instagram"></span></a>
+                    <!-- <a href="#" class="small mr-3"><span class="fa fa-discord" aria-hidden="true"></span></a> -->
+                    <a href="Tel:8850281705" class="small mr-3"><span class="icon-phone"></span></a>
+                    <a href="#" class="small mr-3"><span class="icon-youtube-play"></span></a>
+                </div>
+                <div class="col-lg-3 text-right">
+                    <a href="login.html" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+                    <a href="SignUp.html" class="small mr-3"><span class="icon-sign-in">&nbsp;</span>Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- img start -->
+    <div class="bgcolo">
+        <div class="center1">
+        </div>
+    </div>
+    <!-- img end -->
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="/shop"><img src="{% static 'shop/Img/logo.png' %}" width="60px" height="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#e-spotr">E-Sport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop/shop/">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#review">Reviews</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Platform
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">PlayStation</a>
+                        <a class="dropdown-item" href="#">PC Game</a>
+                        <a class="dropdown-item" href="#">Xbox</a>
+                        <a class="dropdown-item" href="#">Nintendo</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#new&update">New&Update</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop/Cart"><span class="icon-shopping-cart">&nbsp;Cart(<span id="cart" class="text-danger">0</span>)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#review"><span class="icon-heart">(<span class="text-danger">0</span>)</span></a>
+                </li>
+            </ul>
+    </nav>
+    <!-- navbar end -->
+    {% block body %} {% endblock %} {% load static %}
+    <!-- Footer -->
+    <div class="container-fluid bg-black">
+        <br>
+        <!-- component -->
+        <footer class="page-footer font-small text-white">
+            <!-- Footer Links -->
+            <div class=" container text-center text-md-left mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold ">Frolic</h6>
+                        <hr class="d-inline-block">
+                        <!-- <img src="/Img/Froliclogo.png " width="200px " height="200px "> -->
+                        <img src="{% static 'shop/Img/logo.png' %}" width="200px" height="200px">
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold ">Latest Post</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style="width: 60px; ">
+                        <p>
+                            <a href="#! ">Pubg New Update</a>
+                        </p>
+                        <p>
+                            <a href="#! ">Miramar 2.0</a>
+                        </p>
+                        <p>
+                            <a href="#! ">New Season 13</a>
+                        </p>
+                        <p>
+                            <a href="#! ">Origin Big Announcement</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 ">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold ">Useful links</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style="width: 60px; ">
+                        <p>
+                            <a href="#!">Your Account</a>
+                        </p>
+                        <p>
+                            <a href="#!">Blog</a>
+                        </p>
+                        <p>
+                            <a href="#!">Shopping</a>
+                        </p>
+                        <p>
+                            <a href="#!">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 ">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold ">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto " style="width: 60px; ">
+                        <p>
+                            <i class="icon-home mr-3"></i>Mumbai Thane 400604.</p>
+                        <p>
+                            <i class="icon-envelope-o mr-3"></i> Frolic@helpdesk.com</p>
+                        <p>
+                            <i class="icon-phone mr-3"></i> + 00 000 000 00 00</p>
+                        <p>
+                            <i class="icon-print mr-3"></i> + 00 000 000 00 00</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+                <!-- Footer Links -->
+                <!-- Copyright -->
+                <p class="footer-text m-auto">
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved <a href="/shop/contact/">Contact Us</a> &nbsp; <a href="/shop/about/">About Us</a> 
+                </p>
+                <!-- Copyright -->
+        </footer>
+        </div>
+    </div>
+    <!-- end Footer -->
+    {% load static %}
+    <script src="{% static 'JS/main.js'%}"></script>
+    <script src="{% static 'JS/vanilla-tilt.js'%}"></script>
+    <script src="{% static 'JS/bootstrap.bundle.js'%}"></script>
+    <script src="{% static 'JS/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'JS/jquery-3.5.1.min.js'%}"></script>
+    {% block js %} {% endblock %}
+</body>
+</html>
